@@ -6,11 +6,12 @@ test.describe('Login Tests', () => {
     test.beforeEach(async ({ page }) => {
         login =new LoginPageLoginPage(page)
         await login.navigateToLogin();
+        
     });
 
     test('valid login', async ({ page }) => {
         await login.login('csmenike6@gmail.com', 'Chandima@123');
-        await expect(page).toHaveURL('https://dev-app.affooh.com/dashboard');
+        await expect(page).toHaveURL('/dashboard');
     });
 
     test('invalid login', async ({ page }) => {

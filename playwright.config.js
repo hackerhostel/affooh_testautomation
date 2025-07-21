@@ -25,14 +25,15 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot:'on',
     video: 'on',
-  },
+    baseURL:'https://app.affooh.com'},
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Firefox'] },
-    }
+   {
+  name: 'chromium',
+  use: { ...devices['Desktop Chrome'] },
+}
+
   ],
 
   

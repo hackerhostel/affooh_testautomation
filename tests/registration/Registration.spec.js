@@ -4,9 +4,13 @@ import { RegistrationPage } from '../../pages/registration/Registration';
 test.describe('Registration & Login', () => {
   let registrationPage;
 
-  test.beforeEach(async ({ page }) => {
-    registrationPage = new RegistrationPage(page);
-    await registrationPage.gotoRegistration();
+test.beforeEach(async ({ page }) => {
+  registrationPage = new RegistrationPage(page);
+  await registrationPage.gotoRegistration(); 
+});
+
+  test('Verify registration page is loaded', async () => {
+    await registrationPage.isOnRegistrationPage();
   });
 
   test('Navigate to registration screen', async () => {

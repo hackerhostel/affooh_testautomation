@@ -12,7 +12,7 @@ export class ForgotPasswordPage {
   }
 
   async goto() {
-    await this.page.goto('https://dev-app.affooh.com/login');
+    await this.page.goto('/login');
     await this.page.getByRole('link', { name: 'Forgot password' }).click();
   }
 
