@@ -3,6 +3,7 @@ import { LoginPageLoginPage } from '../../pages/login/LoginPage.js';
 
 let login;
 test.describe('Login Tests', () => {
+    
     test.beforeEach(async ({ page }) => {
         login =new LoginPageLoginPage(page)
         await login.navigateToLogin();
