@@ -7,7 +7,7 @@ exports.LoginPageLoginPage=class LoginPage {
     }
 
     async navigateToLogin() {
-        await this.page.goto('https://dev-app.affooh.com/login');
+        await this.page.goto('https://app.affooh.com/login');
     }
 
     async login(username, password) {

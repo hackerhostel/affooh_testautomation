@@ -14,6 +14,13 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  /* Maximum time one test can run for (default: 30s) */
+  timeout: 60 * 1000, // 60 seconds for entire test
+  
+  /* Maximum time expect() should wait for condition (default: 5s) */
+  expect: {
+    timeout: 10 * 1000, // 10 seconds for assertions
+  },
   /* Run tests in files in parallel */
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -22,6 +29,12 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
+     /* Maximum time for actions like click() or fill() (default: 30s) */
+    actionTimeout: 30 * 1000, // 30 seconds per action
+    
+    /* Maximum time for navigation (default: 30s) */
+    navigationTimeout: 45 * 1000, // 45 seconds for page loads
+    
     trace: 'on-first-retry',
     screenshot:'on',
     video: 'on',

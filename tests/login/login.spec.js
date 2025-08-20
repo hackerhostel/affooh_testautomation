@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { LoginPageLoginPage } from '../../pages/login/LoginPage.js';
 
+// npx playwright test tests/login/login.spec.js
+
 let login;
 test.describe('Login Tests', () => {
     test.beforeEach(async ({ page }) => {
@@ -9,12 +11,12 @@ test.describe('Login Tests', () => {
     });
 
     test('valid login', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', 'Chandima@123');
-        await expect(page).toHaveURL('https://dev-app.affooh.com/dashboard');
+        await login.login('sandunikr1999@gmail.com', 'Sandu@99qa');
+        await expect(page).toHaveURL('https://app.affooh.com/dashboard');
     });
 
     test('invalid login', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', 'invalidPassword');
+        await login.login('sandunikr1999@gmail.com', 'invalidPassword');
         await expect(page.getByText('Incorrect username or password.')).toBeVisible();
     });
 
@@ -26,12 +28,12 @@ test.describe('Login Tests', () => {
     });
 
     test('login with only username', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', '');
+        await login.login('sandunikr1999@gmail.com', '');
         await expect(page.getByText('password is a required field')).toBeVisible();
     });
 
     test('login with only password', async ({ page }) => {
-        await login.login('', 'Chandima@123');
+        await login.login('', 'Sandu@99qa');
         await expect(page.getByText('username is a required field')).toBeVisible();
     });
 });
