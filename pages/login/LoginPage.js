@@ -7,12 +7,17 @@ exports.LoginPageLoginPage=class LoginPage {
     }
 
     async navigateToLogin() {
+<<<<<<< HEAD
         await this.page.goto('https://app.affooh.com/login');
+=======
+        await this.page.goto('/login');
+>>>>>>> 683c46bb0ce3368852e59d209ed67ed53b471515
     }
 
     async login(username, password) {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
+        
     }
 }

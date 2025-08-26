@@ -13,10 +13,15 @@ export class RegistrationPage {
     this.verifyButton = page.getByRole('button', { name: /Verify|Submit/i });
   }
 
-  async gotoRegistration() {
-    await this.page.goto('https://dev-app.affooh.com/login');
-    await this.page.getByText('Register Now').click();
-  }
+async gotoRegistration() {
+  await this.page.goto('/login');
+  await this.page.getByText(/Register Now/i).click();
+  await this.page.waitForURL(/\/register/);
+}
+async isOnRegistrationPage() {
+  await this.page.waitForURL(/.*register/);
+}
+
 
   async fillRegistrationForm({ organization, firstName, lastName, email, password, confirmPassword }) {
     await this.orgInput.fill(organization);

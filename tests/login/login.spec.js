@@ -3,14 +3,21 @@ import { LoginPageLoginPage } from '../../pages/login/LoginPage.js';
 
 let login;
 test.describe('Login Tests', () => {
+    
     test.beforeEach(async ({ page }) => {
         login =new LoginPageLoginPage(page)
         await login.navigateToLogin();
+        
     });
 
     test('valid login', async ({ page }) => {
+<<<<<<< HEAD
         await login.login('sathsarawijerathna21@gmail.com', 'Diwya@1234');
         await expect(page).toHaveURL('https://app.affooh.com/login/');
+=======
+        await login.login('csmenike6@gmail.com', 'Chandima@123');
+        await expect(page).toHaveURL('/dashboard');
+>>>>>>> 683c46bb0ce3368852e59d209ed67ed53b471515
     });
 
     test('invalid login', async ({ page }) => {
