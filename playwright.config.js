@@ -1,4 +1,4 @@
-// @ts-check
+/// @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
 /**
@@ -9,7 +9,7 @@ import { defineConfig, devices } from '@playwright/test';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
-/**
+/** 
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
@@ -37,4 +37,3 @@ export default defineConfig({
 
   
 });
-

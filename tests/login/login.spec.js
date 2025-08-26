@@ -9,12 +9,12 @@ test.describe('Login Tests', () => {
     });
 
     test('valid login', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', 'Chandima@123');
-        await expect(page).toHaveURL('https://dev-app.affooh.com/dashboard');
+        await login.login('sathsarawijerathna21@gmail.com', 'Diwya@1234');
+        await expect(page).toHaveURL('https://app.affooh.com/login/');
     });
 
     test('invalid login', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', 'invalidPassword');
+        await login.login('sathsarawijerathna21@gmail.com', 'invalidPassword');
         await expect(page.getByText('Incorrect username or password.')).toBeVisible();
     });
 
@@ -26,12 +26,12 @@ test.describe('Login Tests', () => {
     });
 
     test('login with only username', async ({ page }) => {
-        await login.login('csmenike6@gmail.com', '');
+        await login.login('sathsarawijerathna21@gmail.com', '');
         await expect(page.getByText('password is a required field')).toBeVisible();
     });
 
     test('login with only password', async ({ page }) => {
-        await login.login('', 'Chandima@123');
+        await login.login('', 'Diwya@1234');
         await expect(page.getByText('username is a required field')).toBeVisible();
     });
 });
